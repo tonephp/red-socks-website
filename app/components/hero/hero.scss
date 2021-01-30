@@ -1,0 +1,21 @@
+.hero {
+  padding: 50px 10%;
+
+  @media screen and (max-width: 800px) {
+    padding: 30px 20px;
+  }
+
+  &__link {
+    display: block;
+    border: 5px solid transparent;
+
+    &:hover {
+      border-color: #3ec3ff;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+  }
+}
