@@ -6,7 +6,7 @@ use core\Tone;
 $query = $_SERVER['QUERY_STRING'];
 $query = rtrim($query, '/');
 
-define("DEBUG", 1);
+define("DEBUG", 0);
 define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
 define('CORE', ROOT . '/core');
@@ -25,6 +25,8 @@ spl_autoload_register(function($class) {
 });
 
 new Tone;
+
+Router::add('^docs/(?P<alias>[a-z-]+)$', ['controller' => 'Docs']);
 
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');

@@ -64,6 +64,20 @@ class View {
     self::$meta['keywords'] = $keywords;
   }
 
+  public static function loadView($name, $vars = []) {
+    $filePath = APP . "/{$name}.php";
+
+    if (!is_file($filePath)) {
+      throw new Exception("sdfsdf", 404);
+    }
+
+    ob_start();
+    extract($vars);
+    require APP . "/{$name}.php";
+    
+    return ob_get_clean();
+  }
+
   public function component($name, $vars = []) {
     extract($vars);
     require APP . "/components/{$name}/{$name}.php";
