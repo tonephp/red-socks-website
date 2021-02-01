@@ -6,7 +6,7 @@ use core\Tone;
 $query = $_SERVER['QUERY_STRING'];
 $query = rtrim($query, '/');
 
-define("DEBUG", 0);
+define("DEBUG", 1);
 define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
 define('CORE', ROOT . '/core');
