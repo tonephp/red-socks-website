@@ -2,29 +2,45 @@
 
 namespace app\widgets\menu;
 
+use core\Cache;
+use core\base\Model;
+
 class Menu {
 
   protected $data;
   protected $tree;
   protected $menuHtml;
   protected $template;
-  protected $container;
-  protected $table;
-  protected $cache;
+  protected $table = 'categories';
+  protected $cache = 3600;
+  protected $cacheKey = 'menu';
 
-  public function __construct() {
+  public function __construct($options = []) {
+    $this->template = __DIR__ . '/templates/menu.php';
+    $this->getOptions($options);
     $this->run();
   }
 
   public function run() {
-    $model = new MenuModel();
+    $cache = new Cache();
+    $this->menuHtml = $cache->get($this->cacheKey);
+
+    if (!$this->menuHtml) {
+      $this->loadData();
+      $this->tree = $this->getTree();
+      $this->menuHtml = $this->getMenuHtml($this->tree);
+      $cache->set($this->cacheKey, $this->menuHtml, $this->cache);
+    }
+
+    echo $this->menuHtml;
+  }
+
+  protected function loadData() {
+    $model = new Model();
     $categories = $model->findBySql("SELECT * FROM categories");
     $assocCategories = $this->getAssocArrayWithIds($categories);
 
     $this->data = $assocCategories;
-    $this->tree = $this->getTree();
-
-    debug($this->tree);
   }
 
   protected function getAssocArrayWithIds($categories) {
@@ -60,11 +76,30 @@ class Menu {
     return $tree;
   }
 
-  protected function getMenuHtml($tree, $tab = '') {
+  protected function getMenuHtml($tree, $tab = '', $firstIteration = true) {
+    $str = '';
 
+    foreach ($tree as $id => $item) {
+      $str .= $this->categoryToTemplate($item, $tab, $id, $firstIteration);
+      
+    }
+
+    return $str;
   }
 
-  protected function categoryToTemplate($category, $tab = '', $id) {
+  protected function categoryToTemplate($category, $tab = '', $id, $firstIteration) {
+    ob_start();
 
+    require $this->template;
+
+    return ob_get_clean();
+  }
+
+  protected function getOptions($options) {
+    foreach ($options as $key => $value) {
+      if (property_exists($this, $key)) {
+        $this->$key = $value;
+      }
+    }
   }
 }

@@ -4,7 +4,7 @@ namespace core\base;
 
 use core\Db;
 
-abstract class Model {
+class Model {
   
   protected $db;
   protected $table;
