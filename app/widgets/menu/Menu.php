@@ -11,7 +11,7 @@ class Menu {
   protected $tree;
   protected $menuHtml;
   protected $template;
-  protected $table = 'categories';
+  protected $table = 'menuitems';
   protected $cache = 3600;
   protected $cacheKey = 'menu';
 
@@ -32,12 +32,14 @@ class Menu {
       $cache->set($this->cacheKey, $this->menuHtml, $this->cache);
     }
 
-    echo $this->menuHtml;
+    echo "<ul class='w-menu'>";
+      echo $this->menuHtml;
+    echo "</ul>";
   }
 
   protected function loadData() {
     $model = new Model();
-    $categories = $model->findBySql("SELECT * FROM categories");
+    $categories = $model->findBySql("SELECT * FROM {$this->table}");
     $assocCategories = $this->getAssocArrayWithIds($categories);
 
     $this->data = $assocCategories;

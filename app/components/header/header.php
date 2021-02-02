@@ -4,16 +4,10 @@
 
   </div>
   <div class="header__cell">
-    <ul class="header__nav-list">
-      <li>
-        <a href="/" class="header__nav-link">Home</a>
-      </li>
-      <li>
-        <a href="/docs" class="header__nav-link">Docs</a>
-      </li>
-      <li>
-        <a href="/contacts" class="header__nav-link">Contacts</a>
-      </li>
-    </ul>
+
+    <?php new \app\widgets\menu\Menu([
+      'template' => APP . '/widgets/menu/templates/menu.php',
+      'cache' => 3600
+    ]); ?>
   </div>
 </div>

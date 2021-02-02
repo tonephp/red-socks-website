@@ -1,10 +1,10 @@
-<ul <?=$firstIteration ? 'class="w-menu"' : null?>>
-  <li>
-    <a href="?id=<?=$id;?>"><?=$tab . $category['title'];?></a>
-    <?php if (isset($category['childs'])) : ?>
-      <ul>
-        <?=$this->getMenuHtml($category['childs'], $tab . '-', false);?>
-      </ul>
-    <?php endif; ?>
-  </li>
-</ul>
+<li>
+  <a href="<?=$category['link'];?>" class="w-menu__nav-link">
+    <?=$tab . $category['title'];?>
+  </a>
+  <?php if (isset($category['childs'])) : ?>
+    <ul>
+      <?=$this->getMenuHtml($category['childs'], $tab . '-', false);?>
+    </ul>
+  <?php endif; ?>
+</li>
