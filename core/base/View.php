@@ -68,7 +68,7 @@ class View {
     $filePath = APP . "/{$name}.php";
 
     if (!is_file($filePath)) {
-      throw new Exception("sdfsdf", 404);
+      throw new Exception("View $name not found", 404);
     }
 
     ob_start();
