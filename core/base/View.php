@@ -25,7 +25,10 @@ class View {
   }
 
   public function render($vars) {
-    $file_view = APP . "/pages/{$this->route['controller']}/{$this->view}.php";
+    $prefix = $this->route['prefix'];
+    $prefix = $prefix ? rtrim($prefix, '\\') . '/' : '';
+
+    $file_view = APP . "/pages/{$prefix}{$this->route['controller']}/{$this->view}.php";
     if (is_array($vars)) extract($vars);
     
     ob_start();
@@ -80,6 +83,21 @@ class View {
 
   public function component($name, $vars = []) {
     extract($vars);
-    require APP . "/components/{$name}/{$name}.php";
+
+    $pieces = explode("/", $name);
+    $filename = $name;
+    $path = '';
+    $count = count($pieces);
+
+    if ($count > 1) {
+      $filename = $pieces[$count - 1];
+      array_pop($pieces);
+      
+      foreach ($pieces as $folder) {
+        $path .= $folder . '/';
+      }
+    }
+    
+    require APP . "/components/{$path}{$filename}/{$filename}.php";
   }
 }

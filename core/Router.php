@@ -56,10 +56,17 @@ class Router {
                     $route['action'] = 'index';
                 }
 
+                if (!isset($route['prefix'])) {
+                    $route['prefix'] = '';
+                } else {
+                    $route['prefix'] .= '\\';
+                }
+
                 $route['controller'] = upperCamelCase($route['controller']);
                 $route['url'] = $url;
 
                 self::$route = $route;
+
                 return true;
             }
         }
@@ -68,7 +75,7 @@ class Router {
     }
 
     protected static function getControllerName() {
-        $name = self::$route['controller'] . 'Controller';
+        $name = self::$route['prefix'] . self::$route['controller'] . 'Controller';
         $name = 'app\controllers\\' . $name;
 
         return $name;

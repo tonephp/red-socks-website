@@ -1,0 +1,1 @@
+<a class="a-logo" href="/admin"><span>Admin</span></a>
