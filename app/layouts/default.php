@@ -21,6 +21,10 @@
         <?=$_SESSION['errors']; unset($_SESSION['errors'])?>
       <?php endif; ?>
 
+      <?php if (isset($_SESSION['success'])): ?>
+        <?=$_SESSION['success']; unset($_SESSION['success'])?>
+      <?php endif; ?>
+
       <?=$content;?>
     </div>
     <div class="layout__footer">

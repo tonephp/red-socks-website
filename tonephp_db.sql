@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: tonephp-mysql-app:3306
--- Generation Time: Feb 02, 2021 at 04:59 PM
+-- Generation Time: Feb 06, 2021 at 03:23 PM
 -- Server version: 5.7.32
 -- PHP Version: 7.2.2
 
@@ -21,29 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `tonephp_db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categories`
---
-
-CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
-  `title` varchar(256) CHARACTER SET utf8 NOT NULL,
-  `parent` int(11) NOT NULL,
-  `alias` varchar(256) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `title`, `parent`, `alias`) VALUES
-(1, 'Комплектующие к Apple', 0, 'komplect-apple'),
-(2, 'Запчасти ipad', 1, 'zapchasti-ipad'),
-(3, 'Second item', 1, 'second-child'),
-(4, 'Subtree Title', 3, 'subtree');
 
 -- --------------------------------------------------------
 
@@ -68,15 +45,24 @@ INSERT INTO `menuitems` (`id`, `title`, `link`, `parent`, `alias`) VALUES
 (2, 'Docs', '/docs', 0, 'docs'),
 (3, 'Contacts', '/contacts', 0, 'contacts');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `role` enum('user','admin') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `menuitems`
@@ -85,20 +71,28 @@ ALTER TABLE `menuitems`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `user`
 --
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `login` (`login`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `menuitems`
 --
 ALTER TABLE `menuitems`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

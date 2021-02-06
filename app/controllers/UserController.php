@@ -14,7 +14,7 @@ class UserController extends AppController {
             $user = new User();
             $user->load($data);
 
-            $isUserValid = $user->validate($data);
+            $isUserValid = $user->validate();
             $isUserUnique = $user->checkUnique();
 
             if (!$isUserValid || !$isUserUnique) {
@@ -29,6 +29,8 @@ class UserController extends AppController {
             );
             
             $user->save();
+
+            $_SESSION['success'] = "Вы успешно зарегистрированы!";
         }
 
         View::setMeta(
@@ -46,9 +48,26 @@ class UserController extends AppController {
 
     public function loginAction() {
 
+        if (!empty($_POST)) {
+            $user = new User();
+            
+            if ($user->login()) {
+                $_SESSION['success'] = "Вы успешно авторизированы!";
+            } else {
+                $_SESSION['errors'] = "Login/Password вверены неправильно!";
+            }
+            redirect();
+        }
+
+        View::setMeta(
+            "Login | TonePHP Framework"
+        );
     }
 
     public function logoutAction() {
-
+        if (isset($_SESSION['user'])) {
+            unset($_SESSION['user']);
+        }
+        redirect();
     }
 }

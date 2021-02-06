@@ -100,4 +100,8 @@ class View {
     
     require APP . "/components/{$path}{$filename}/{$filename}.php";
   }
+
+  public function isAuth() {
+    return isset($_SESSION['user']);
+  }
 }

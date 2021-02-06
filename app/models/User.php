@@ -49,4 +49,29 @@ class User extends Model {
     }
     return true;
   }
+
+  public function login() {
+    $login = trim($_POST['login']) ?? null;
+    $password = trim($_POST['password']) ?? null;
+
+    if ($login && $password) {
+      $sql = "SELECT * FROM $this->table WHERE login = ?";
+      $users = $this->db->query($sql, [$login]);
+
+      if ($users) {
+        $user = $users[0];
+        if (password_verify($password, $user['password'])) {
+          foreach ($user as $key => $value) {
+            if ($key !== 'password' && $key !== 'id') {
+              $_SESSION['user'][$key] = $value;
+            }
+          }
+
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
 }
