@@ -1,0 +1,1 @@
+<script src="https://gist.github.com/tonephp/0aa57d713db122355db0e2a014c7221e.js"></script>

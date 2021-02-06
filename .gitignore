@@ -1,8 +1,8 @@
-/tmp/cache/*
+/tmp/*
 !/tmp/cache/.gitkeep
-/tmp/errors.log
 node_modules
 yarn.lock
 
 .swp
 .DS_Store
+/vendor/
