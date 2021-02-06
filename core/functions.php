@@ -24,3 +24,17 @@ function isAjax() {
         isset($_SERVER['HTTP_X_REQUESTED_WITH']) 
         && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
 }
+
+function redirect($http = false) {
+    if ($http) {
+        $redirect = $http;
+    } else {
+        $redirect = $_SERVER['HTTP_REFERER'] ?? '/';
+    }
+    header("Location: $redirect");
+    exit;
+}
+
+function h($str) {
+    return htmlspecialchars($str, ENT_QUOTES);
+}

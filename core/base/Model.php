@@ -26,7 +26,19 @@ class Model {
     }
   }
 
+  public function save($table = null) {
+    $table = $table ?? $this->table;
+    $propetries = implode(", ", array_keys($this->attributes));
+    $questions = preg_replace( '#[^,]+#', '?', $propetries);
+    
+    $sql = "INSERT INTO $table (" . $propetries . ") VALUES (" . $questions . ")";
+    $saved = $this->db->execute($sql, array_values($this->attributes));
+
+    return $saved;
+  }
+
   public function validate($data) {
+    V::lang('ru');
     $v = new V($data);
     $v->rules($this->rules);
 
@@ -34,9 +46,22 @@ class Model {
       return true;
     }
 
-    $this->error = $v->errors();
+    $this->errors = $v->errors();
 
     return false;
+  }
+
+  public function getErrors() {
+    $errors = '<ul>';
+
+    foreach ($this->errors as $error) {
+      foreach ($error as $item) {
+        $errors .= "<li>$item</li>";
+      }
+    }
+    $errors .= '</ul>';
+
+    $_SESSION['errors'] = $errors;
   }
 
   public function query($sql) {

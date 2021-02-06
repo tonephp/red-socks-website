@@ -6,6 +6,7 @@
       type="text" 
       name="login" 
       placeholder="login"
+      value="<?=$login?>"
     >
   </div>
   <div>
@@ -24,6 +25,7 @@
       type="text" 
       name="name" 
       placeholder="name"
+      value="<?=$name?>"
     >
   </div>
   <div>
@@ -33,6 +35,7 @@
       type="email" 
       name="email" 
       placeholder="email"
+      value="<?=$email?>"
     >
   </div>
   <div>

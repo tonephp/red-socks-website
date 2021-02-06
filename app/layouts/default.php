@@ -16,6 +16,11 @@
       <?=$this->component('header', ['myVar' => 'header'])?>
     </div>
     <div class="layout__content">
+
+      <?php if (isset($_SESSION['errors'])): ?>
+        <?=$_SESSION['errors']; unset($_SESSION['errors'])?>
+      <?php endif; ?>
+
       <?=$content;?>
     </div>
     <div class="layout__footer">
