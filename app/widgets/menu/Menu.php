@@ -2,8 +2,8 @@
 
 namespace app\widgets\menu;
 
-use core\Cache;
 use core\base\Model;
+use core\Tone;
 
 class Menu {
 
@@ -22,7 +22,7 @@ class Menu {
   }
 
   public function run() {
-    $cache = new Cache();
+    $cache = Tone::$app->cache;
     $this->menuHtml = $cache->get($this->cacheKey);
 
     if (!$this->menuHtml) {

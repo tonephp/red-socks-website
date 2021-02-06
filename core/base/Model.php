@@ -91,4 +91,22 @@ class Model {
 
     return $this->db->query($sql, ['%' . $str . '%']);
   }
+
+  public function convertToAssoc($items, $itemKey = 'id') {
+    $assocItems = [];
+    
+    foreach ($items as $item) {
+      
+      $keys = array_keys($item);
+      $id = $item[$itemKey];
+
+      foreach ($keys as $key => $value) {
+        if ($value != $itemKey) {
+          $assocItems[$id][$value] = $item[$value];
+        }
+      }
+    }
+
+    return $assocItems;
+  }
 }

@@ -7,6 +7,7 @@ class Registry {
   use TSingletone;
 
   public static $objects = [];
+  protected static $properties = [];
 
   protected function __construct() {
     require ROOT . '/config/main.php';
@@ -14,6 +15,18 @@ class Registry {
     foreach ($config['components'] as $name => $component) {
       self::$objects[$name] = new $component;
     }
+  }
+
+  public function setProperty($name, $value) {
+    self::$properties[$name] = $value;
+  }
+
+  public function getProperty($name) {
+    if (isset(self::$properties[$name])) {
+      return self::$properties[$name];
+    }
+
+    return null;
   }
 
   public function __get($name) {
