@@ -16,15 +16,13 @@ define('LAYOUT', 'default');
 
 require '../core/functions.php';
 
-spl_autoload_register(function($class) {
-  $file = ROOT . '/' . str_replace('\\', '/', $class) . '.php';
-  
-  if (is_file($file)) {
-    require_once $file;
-  }
-});
+require '../vendor/autoload.php';
 
 new Tone;
+
+Router::add('^login$', ['controller' => 'User', 'action' => 'login']);
+Router::add('^signup$', ['controller' => 'User', 'action' => 'signup']);
+Router::add('^logout$', ['controller' => 'User', 'action' => 'logout']);
 
 Router::add('^docs/(?P<alias>[a-z-]+)$', ['controller' => 'Docs']);
 

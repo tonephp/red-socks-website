@@ -2,4 +2,12 @@
   background-color: $dark-grey;
   color: #696969;
   padding: 20px;
+
+
+  &__links {
+    
+    a {
+      color: white;
+    }
+  }
 }
