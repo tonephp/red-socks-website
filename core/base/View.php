@@ -3,6 +3,8 @@
 namespace core\base;
 
 use Exception;
+use core\Tone;
+use core\base\Lang;
 
 class View {
 
@@ -25,6 +27,9 @@ class View {
   }
 
   public function render($vars) {
+    $lang = Tone::$app->getProperty('lang');
+    Lang::load($lang['code'], $this->route);
+
     $prefix = $this->route['prefix'];
     $prefix = $prefix ? rtrim($prefix, '\\') . '/' : '';
 

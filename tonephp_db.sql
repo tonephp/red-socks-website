@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: tonephp-mysql-app:3306
--- Generation Time: Feb 06, 2021 at 03:23 PM
+-- Generation Time: Feb 08, 2021 at 10:20 PM
 -- Server version: 5.7.32
 -- PHP Version: 7.2.2
 
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `tonephp_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lang`
+--
+
+CREATE TABLE `lang` (
+  `id` int(11) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `base` enum('0','1') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `lang`
+--
+
+INSERT INTO `lang` (`id`, `code`, `title`, `base`) VALUES
+(1, 'ru', 'Russian', '1'),
+(2, 'en', 'English', '0');
 
 -- --------------------------------------------------------
 
@@ -52,17 +73,31 @@ INSERT INTO `menuitems` (`id`, `title`, `link`, `parent`, `alias`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `role` enum('user','admin') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `address` varchar(255) NOT NULL,
+  `role` enum('user','admin') NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `address`, `role`) VALUES
+(1, 'admin', '$2y$10$2UxVcLrLDjTbKacjSM4FeewcR10HkLYtIi/lhPalYAmaG5h/kLP0a', 'admin@gmail.com', 'Admin Name', 'Kyiv, Ukraine', 'admin');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `lang`
+--
+ALTER TABLE `lang`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `menuitems`
@@ -83,6 +118,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `lang`
+--
+ALTER TABLE `lang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `menuitems`
 --
 ALTER TABLE `menuitems`
@@ -92,7 +133,7 @@ ALTER TABLE `menuitems`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

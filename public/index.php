@@ -14,9 +14,9 @@ define('APP', ROOT . '/app');
 define('CACHE', ROOT . '/tmp/cache');
 define('LAYOUT', 'default');
 
-require '../core/functions.php';
-
 require '../vendor/autoload.php';
+
+require '../core/functions.php';
 
 new Tone;
 

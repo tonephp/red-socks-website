@@ -2,4 +2,9 @@
   background-color: $dark-grey;
   display: flex;
   justify-content: space-between;
+
+  &__cell {
+    display: flex;
+    align-items: center;
+  }
 }

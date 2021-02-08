@@ -3,6 +3,9 @@
     <?=$this->component('logo')?>
   </div>
   <div class="header__cell">
+    <?php new \app\widgets\lang\Lang(); ?>
+  </div>
+  <div class="header__cell">
     <?php new \app\widgets\menu\Menu([
       'template' => APP . '/widgets/menu/templates/menu.php',
       'cache' => 3600

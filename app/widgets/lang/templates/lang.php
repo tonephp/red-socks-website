@@ -1,4 +1,4 @@
-<select name="lang" id="lang">
+<select name="lang" id="w-lang">
   <option value="<?=$this->lang['code']?>"><?=$this->lang['title']?></option>
 
   <?php foreach ($this->langs as $key => $value) : ?>
