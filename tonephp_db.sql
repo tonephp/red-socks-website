@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: tonephp-mysql-app:3306
--- Generation Time: Feb 08, 2021 at 10:20 PM
+-- Generation Time: Feb 09, 2021 at 11:30 AM
 -- Server version: 5.7.32
 -- PHP Version: 7.2.2
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `lang` (
   `id` int(11) NOT NULL,
+  `alias` varchar(255) NOT NULL,
   `code` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `base` enum('0','1') NOT NULL
@@ -39,9 +40,9 @@ CREATE TABLE `lang` (
 -- Dumping data for table `lang`
 --
 
-INSERT INTO `lang` (`id`, `code`, `title`, `base`) VALUES
-(1, 'ru', 'Russian', '1'),
-(2, 'en', 'English', '0');
+INSERT INTO `lang` (`id`, `alias`, `code`, `title`, `base`) VALUES
+(3, 'ru', 'ru', 'Russian', '0'),
+(4, 'en', 'en', 'English', '1');
 
 -- --------------------------------------------------------
 
@@ -51,7 +52,6 @@ INSERT INTO `lang` (`id`, `code`, `title`, `base`) VALUES
 
 CREATE TABLE `menuitems` (
   `id` int(11) NOT NULL,
-  `title` varchar(256) NOT NULL,
   `link` varchar(256) NOT NULL,
   `parent` int(11) NOT NULL,
   `alias` varchar(256) NOT NULL
@@ -61,10 +61,35 @@ CREATE TABLE `menuitems` (
 -- Dumping data for table `menuitems`
 --
 
-INSERT INTO `menuitems` (`id`, `title`, `link`, `parent`, `alias`) VALUES
-(1, 'Home', '/', 0, 'home'),
-(2, 'Docs', '/docs', 0, 'docs'),
-(3, 'Contacts', '/contacts', 0, 'contacts');
+INSERT INTO `menuitems` (`id`, `link`, `parent`, `alias`) VALUES
+(1, '/', 0, 'home'),
+(2, '/docs', 0, 'docs'),
+(3, '/contacts', 0, 'contacts');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menuitems_translate`
+--
+
+CREATE TABLE `menuitems_translate` (
+  `id` int(11) NOT NULL,
+  `menuitem_alias` varchar(255) NOT NULL,
+  `lang_alias` varchar(255) NOT NULL,
+  `value` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `menuitems_translate`
+--
+
+INSERT INTO `menuitems_translate` (`id`, `menuitem_alias`, `lang_alias`, `value`) VALUES
+(1, 'home', 'ru', 'Главная'),
+(2, 'docs', 'ru', 'Документация'),
+(3, 'contacts', 'ru', 'Контакты'),
+(4, 'home', 'en', 'Main'),
+(5, 'contacts', 'en', 'Contacts'),
+(6, 'docs', 'en', 'Docs');
 
 -- --------------------------------------------------------
 
@@ -73,21 +98,13 @@ INSERT INTO `menuitems` (`id`, `title`, `link`, `parent`, `alias`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `role` enum('user','admin') NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `address`, `role`) VALUES
-(1, 'admin', '$2y$10$2UxVcLrLDjTbKacjSM4FeewcR10HkLYtIi/lhPalYAmaG5h/kLP0a', 'admin@gmail.com', 'Admin Name', 'Kyiv, Ukraine', 'admin');
+  `role` enum('user','admin') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -106,6 +123,12 @@ ALTER TABLE `menuitems`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `menuitems_translate`
+--
+ALTER TABLE `menuitems_translate`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -121,7 +144,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lang`
 --
 ALTER TABLE `lang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `menuitems`
@@ -130,10 +153,16 @@ ALTER TABLE `menuitems`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `menuitems_translate`
+--
+ALTER TABLE `menuitems_translate`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

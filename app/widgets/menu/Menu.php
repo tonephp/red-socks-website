@@ -14,10 +14,17 @@ class Menu {
   protected $table = 'menuitems';
   protected $cache = 3600;
   protected $cacheKey = 'menu';
+  protected $langAlias = '';
 
   public function __construct($options = []) {
     $this->template = __DIR__ . '/templates/menu.php';
     $this->getOptions($options);
+
+    $lang = Tone::$app->getProperty('lang');
+    $this->langAlias = $lang['alias'];
+
+    $this->cacheKey = $this->cacheKey . $this->langAlias;
+
     $this->run();
   }
 
@@ -39,7 +46,14 @@ class Menu {
 
   protected function loadData() {
     $model = new Model();
-    $categories = $model->findBySql("SELECT * FROM {$this->table}");
+    $sql = "
+      SELECT menuitems.*, menuitems_translate.value
+      FROM menuitems
+      LEFT JOIN menuitems_translate ON
+        menuitems.alias = menuitems_translate.menuitem_alias AND
+        menuitems_translate.lang_alias = '" . $this->langAlias . "'
+    ";
+    $categories = $model->findBySql($sql);
     $assocCategories = $this->getAssocArrayWithIds($categories);
 
     $this->data = $assocCategories;

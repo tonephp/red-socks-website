@@ -25,6 +25,7 @@ class Lang {
 
   public static function getLangs() {
     $model = new Model();
+    
     $langs = $model->findBySql("SELECT * FROM lang ORDER BY base DESC");
     $langs = $model->convertToAssoc($langs, 'code');
 

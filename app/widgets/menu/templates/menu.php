@@ -1,6 +1,6 @@
 <li>
   <a href="<?=$category['link'];?>" class="w-menu__nav-link">
-    <?=$tab . $category['title'];?>
+    <?=$tab . $category['value'];?>
   </a>
   <?php if (isset($category['childs'])) : ?>
     <ul>
