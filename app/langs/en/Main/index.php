@@ -1,6 +1,5 @@
 <?php
 
 return [
-    "test" => "Test value",
-    "test2" => "Test value2"
+    "hero_description" => "Web-framework with good documentation",
 ];

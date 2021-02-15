@@ -1,7 +1,12 @@
 .header {
+  padding-right: 20px;
+  padding-left: 20px;
   background-color: $dark-grey;
-  display: flex;
-  justify-content: space-between;
+
+  &__cells {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__cell {
     display: flex;

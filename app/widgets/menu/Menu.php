@@ -52,6 +52,7 @@ class Menu {
       LEFT JOIN menuitems_translate ON
         menuitems.alias = menuitems_translate.menuitem_alias AND
         menuitems_translate.lang_alias = '" . $this->langAlias . "'
+      ORDER BY position
     ";
     $categories = $model->findBySql($sql);
     $assocCategories = $this->getAssocArrayWithIds($categories);

@@ -1,8 +1,8 @@
 <div class="w-lang-dropdown">
-  <select class="js-w-lang-dropdown__select">
+  <select class="w-lang-dropdown__select js-w-lang-dropdown__select">
     <?php foreach ($this->langs as $key => $value) : ?>
       <option value="<?=$key?>" <?=$this->lang['alias'] == $key ? 'selected' : null?>><?=$value['title']?></option>
     <?php endforeach; ?>
   </select>
-  <span class="focus"></span>
+  <span class="w-lang-dropdown__focus"></span>
 </div>
