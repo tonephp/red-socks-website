@@ -2,17 +2,19 @@
 
 namespace app\widgets\lang;
 
+use core\base\Widget;
 use core\base\Model;
 use core\Tone;
 
-class Lang {
+class Lang extends Widget {
 
   protected $template;
   protected $langs;
   protected $lang;
 
-  public function __construct() {
+  public function __construct($options = []) {
     $this->template = __DIR__ . '/templates/lang.php';
+    $this->getOptions($options);
     $this->run();
   }
 
