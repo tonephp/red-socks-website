@@ -2,8 +2,9 @@
 
 namespace app\controllers;
 
-use core\base\Controller;
 use core\Tone;
+use core\base\Controller;
+use core\base\Lang;
 use app\widgets\lang\Lang as LangWidget;
 
 class AppController extends Controller {
@@ -16,5 +17,8 @@ class AppController extends Controller {
 
     Tone::$app->setProperty('langs', $langs);
     Tone::$app->setProperty('lang', $lang);
+
+    $lang = Tone::$app->getProperty('lang');
+    Lang::load($lang['code'], $this->route);
   }
 }

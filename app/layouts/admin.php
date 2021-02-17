@@ -13,7 +13,7 @@
   
   <div class="layout">
     <div class="layout__header">
-      <?=$this->component('admin/header', ['myVar' => 'header'])?>
+      <?=$this->component('admin/header', ['myVar' => 'headerrrr'])?>
     </div>
     <div class="layout__content">
       <?=$content;?>

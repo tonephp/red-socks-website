@@ -5,6 +5,6 @@
   </div>
   <div class="a-header__cell">
 
-    
+    <?=$myVar?>
   </div>
 </div>

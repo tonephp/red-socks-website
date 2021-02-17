@@ -3,6 +3,7 @@
 namespace app\controllers\admin;
 
 use core\base\Controller;
+use app\models\User;
 
 class AdminController extends Controller {
   public $layout = 'admin';
@@ -10,8 +11,14 @@ class AdminController extends Controller {
   public function __construct($route) {
     parent::__construct($route);
 
-    if (!isset($is_admin) || $is_admin !== 1) {
-      header('Location: /');
+    if (
+      isset($this::$public) && !$this::$public || 
+      !isset($this::$public)
+    ) {
+
+      if (!User::isAdmin()) {
+        redirect('/admin/user/login');
+      }
     }
   }
 }

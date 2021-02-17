@@ -6,12 +6,12 @@ use core\base\View;
 
 class UserController extends AdminController {
 
-  public function indexAction() {
+  use TPublicController;
+
+  public function loginAction() {
     
     View::setMeta(
-      "Admin panel | TonePHP Framework",
-      "TonePHP Framework admin panel - main page",
-      "TonePHP, Tone PHP, tone php, tonephp framework, admin page"
+      "Login"
     );
   }
 }

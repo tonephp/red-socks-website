@@ -27,7 +27,7 @@ Router::add('^logout$', ['controller' => 'User', 'action' => 'logout']);
 Router::add('^docs/(?P<alias>[a-z-]+)$', ['controller' => 'Docs']);
 
 // default admin routes
-Router::add('^admin$', ['prefix' => 'admin', 'controller' => 'User', 'action' => 'index']);
+Router::add('^admin$', ['prefix' => 'admin', 'controller' => 'Main', 'action' => 'index']);
 Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
 
 // default routes
