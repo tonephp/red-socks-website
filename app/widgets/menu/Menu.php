@@ -57,6 +57,8 @@ class Menu {
     $categories = $model->findBySql($sql);
     $assocCategories = $this->getAssocArrayWithIds($categories);
 
+    debug($assocCategories);
+
     $this->data = $assocCategories;
   }
 
@@ -98,7 +100,6 @@ class Menu {
 
     foreach ($tree as $id => $item) {
       $str .= $this->categoryToTemplate($item, $tab, $id, $firstIteration);
-      
     }
 
     return $str;

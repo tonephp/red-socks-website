@@ -12,8 +12,8 @@ class AdminController extends Controller {
     parent::__construct($route);
 
     if (
-      isset($this::$public) && !$this::$public || 
-      !isset($this::$public)
+      isset($this->public) && !$this->public ||
+      !isset($this->public)
     ) {
 
       if (!User::isAdmin()) {

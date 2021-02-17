@@ -4,7 +4,8 @@
 
   </div>
   <div class="a-header__cell">
-
-    <?=$myVar?>
+    <?php if ($this->isAuth()) : ?>
+      <a href="/logout">Logout</a>
+    <?php endif; ?>
   </div>
 </div>

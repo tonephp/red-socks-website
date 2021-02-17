@@ -55,7 +55,9 @@ class User extends Model {
     $password = trim($_POST['password']) ?? null;
 
     if ($login && $password) {
+      
       $sql = "SELECT * FROM $this->table WHERE login = ?";
+      
       $users = $this->db->query($sql, [$login]);
 
       if ($users) {

@@ -10,6 +10,8 @@
       <?php else: ?>
         <a href="/login">Login</a>
         <a href="/signup">Sign Up</a>
+        |
+        <a href="/admin/user/login">Login as Admin</a>
       <?php endif; ?>
     </div>
   </div>
