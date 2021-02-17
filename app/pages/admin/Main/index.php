@@ -1,1 +1,1 @@
-Admin panelll
+Admin panel

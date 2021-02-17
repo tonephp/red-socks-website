@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: tonephp-mysql-app:3306
--- Generation Time: Feb 15, 2021 at 09:02 PM
+-- Generation Time: Feb 17, 2021 at 09:14 PM
 -- Server version: 5.7.32
 -- PHP Version: 7.2.2
 
@@ -99,6 +99,31 @@ INSERT INTO `menuitems_translate` (`id`, `menuitem_alias`, `lang_alias`, `value`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `translate`
+--
+
+CREATE TABLE `translate` (
+  `id` int(11) NOT NULL,
+  `alias` varchar(255) NOT NULL,
+  `lang_alias` varchar(255) NOT NULL,
+  `value` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `translate`
+--
+
+INSERT INTO `translate` (`id`, `alias`, `lang_alias`, `value`) VALUES
+(1, 'hero_description', 'en', 'Web-framework with good documentation!'),
+(2, 'hero_description', 'ru', 'Веб-фреймворк с хорошей документацией'),
+(3, 'hero_description', 'ua', 'Веб-фреймворк з гарною документаціею'),
+(4, 'read_docs', 'en', 'Read docs'),
+(5, 'read_docs', 'ua', 'Читати документацію'),
+(6, 'read_docs', 'ru', 'Читать документацию');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -110,6 +135,14 @@ CREATE TABLE `user` (
   `name` varchar(255) NOT NULL,
   `role` enum('user','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `role`) VALUES
+(3, 'admin', '$2y$10$hCua9/1FkRPW5A1VMCx7b.gbCaLsQjLgwLNlTt1i2T/9/2vh3hjq2', 'admin@admin.com', 'admin', 'user'),
+(4, 'user', '$2y$10$QQSaK7cIBkdN2VUMJNfbLOSr2HI5j0ZgCnXM.i6s27B07D.s4XTA2', 'user@user.com', 'user', 'user');
 
 --
 -- Indexes for dumped tables
@@ -131,6 +164,12 @@ ALTER TABLE `menuitems`
 -- Indexes for table `menuitems_translate`
 --
 ALTER TABLE `menuitems_translate`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `translate`
+--
+ALTER TABLE `translate`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -164,10 +203,16 @@ ALTER TABLE `menuitems_translate`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `translate`
+--
+ALTER TABLE `translate`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

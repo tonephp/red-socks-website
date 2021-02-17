@@ -3,9 +3,20 @@
     <?=$this->component('admin/logo')?>
 
   </div>
-  <div class="a-header__cell">
-    <?php if ($this->isAuth()) : ?>
+
+  <?php if ($this->isAuth()) : ?>
+
+    <div class="a-header__cell">
+      
+      <a href="/admin/translate">Translate</a>
+      
+    </div>
+
+    <div class="a-header__cell">
+      
       <a href="/logout">Logout</a>
-    <?php endif; ?>
-  </div>
+      
+    </div>
+
+  <?php endif; ?>
 </div>

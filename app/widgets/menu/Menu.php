@@ -57,8 +57,6 @@ class Menu {
     $categories = $model->findBySql($sql);
     $assocCategories = $this->getAssocArrayWithIds($categories);
 
-    debug($assocCategories);
-
     $this->data = $assocCategories;
   }
 

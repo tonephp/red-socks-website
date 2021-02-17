@@ -10,7 +10,7 @@ class MainController extends AppController {
     public function indexAction() {
     
        View::setMeta(
-           __('title')
+           __('page_title')
        );
        
        $lang = Tone::$app->getProperty('lang');

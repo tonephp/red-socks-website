@@ -19,6 +19,6 @@ class AppController extends Controller {
     Tone::$app->setProperty('lang', $lang);
 
     $lang = Tone::$app->getProperty('lang');
-    Lang::load($lang['code'], $this->route);
+    Lang::load($lang['code']);
   }
 }

@@ -2,25 +2,43 @@
 
 namespace core\base;
 
+use core\Tone;
+
 class Lang {
 
   public static $data = [];
   public static $layout = [];
   public static $view = [];
+  public static $cacheKey = 'translate';
+  public static $cacheTime = 3600;
 
-  public static function load($code, $route) {
-    $layout = APP . "/langs/{$code}.php";
-    $view = APP . "/langs/{$code}/{$route['controller']}/{$route['action']}.php";
+  public static function load($code) {
+    self::$cacheKey .= $code;
 
-    if (file_exists($layout)) {
-        self::$layout = require $layout;
+    $cache = Tone::$app->cache;
+    $data = $cache->get(self::$cacheKey);
+
+    if (!$data) {
+      
+      $model = new Model;
+
+      $sql = "
+        SELECT * FROM translate
+        WHERE lang_alias = '" . $code . "'
+      ";
+  
+      $res = $model->findBySql($sql);
+  
+      $data = [];
+  
+      foreach ($res as $item) {
+        $data[$item['alias']] = $item['value'];
+      }
+
+      $cache->set(self::$cacheKey, $data, self::$cacheTime);
     }
 
-    if (file_exists($view)) {
-        self::$view = require $view;
-    }
-
-    self::$data = array_merge(self::$layout, self::$view);
+    self::$data = $data;
   }
 
   public static function get($key = 'default') {
