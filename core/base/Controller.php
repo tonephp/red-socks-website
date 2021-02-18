@@ -3,6 +3,7 @@
 namespace core\base;
 
 use core\Tone;
+use app\widgets\lang\Lang as LangWidget;
 
 abstract class Controller {
 
@@ -17,6 +18,15 @@ abstract class Controller {
       $this->route = $route;
       $this->view = $route['action'];
       $this->tone = Tone::$app;
+
+      $langs = LangWidget::getLangs();
+      $lang = LangWidget::getLang($langs);
+
+      Tone::$app->setProperty('langs', $langs);
+      Tone::$app->setProperty('lang', $lang);
+
+      $lang = Tone::$app->getProperty('lang');
+      Lang::load($lang['code']);
   }
 
   public function getView() {

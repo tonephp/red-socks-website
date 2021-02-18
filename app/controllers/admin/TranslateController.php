@@ -14,12 +14,15 @@ class TranslateController extends AdminController {
   public $cacheKey = 'translate';
 
   public function indexAction() {
-    $langs = ['en', 'ua', 'ru'];
+    $appLang = Tone::$app->getProperty('lang');
+    $appLangs = Tone::$app->getProperty('langs');
+
+    $langs = array_keys($appLangs);
 
     if (isset($this->route['lang'])) {
       $lang = $this->route['lang'];
     } else {
-      redirect('/admin/translate/en');
+      redirect("/admin/translate/{$appLang['code']}");
     }
 
     $this->cacheKey .= $lang;
