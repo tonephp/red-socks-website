@@ -7,7 +7,7 @@
   <?=$this::getMeta(); ?>
   <link rel="icon" type="image/png" href="/favicon.png" />
   
-  <link href="/dist/styles.css" rel="stylesheet">
+  <link href="/dist/admin.css" rel="stylesheet">
 </head>
 <body>
   
@@ -32,6 +32,6 @@
     </div>
   </div>
   
-  <script src="/dist/app.js"></script>
+  <script src="/dist/admin.js"></script>
 </body>
 </html>

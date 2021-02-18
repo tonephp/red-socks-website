@@ -4,6 +4,7 @@ module.exports = {
   mode: 'production',
   entry: {
       app: ['./app/src/app.js'],
+      admin: ['./app/src/admin.js'],
   },
   output: {
     filename: '[name].js',

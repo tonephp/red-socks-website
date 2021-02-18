@@ -22,6 +22,10 @@ class TranslateController extends AdminController {
     $this->appLangs = Tone::$app->getProperty('langs');
   }
 
+  public function indexAction() {
+    redirect('/admin/translate/edit/');
+  }
+
   public function addAction() {
 
     if (isset($this->route['alias'])) {

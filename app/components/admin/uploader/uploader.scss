@@ -1,0 +1,35 @@
+.a-uploader {
+
+  &__input {
+    display: none;
+  }
+
+  &__image-preview-wrapper {
+    width: 200px;
+    position: relative;
+
+    &.is-removing {
+      transform: scale(0);
+      transition: transform 0.3s;
+      pointer-events: none;
+    }
+  }
+
+  &__image-preview {
+    width: 100%;
+  }
+
+  &__preview-remove {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}

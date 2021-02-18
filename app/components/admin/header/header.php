@@ -7,7 +7,7 @@
   <?php if ($this->isAuth()) : ?>
 
     <div class="a-header__cell">
-      
+      <a href="/admin/image">Image</a>
       <a href="/admin/translate/edit">Translate</a>
       
     </div>
