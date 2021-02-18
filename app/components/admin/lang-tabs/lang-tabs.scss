@@ -1,0 +1,20 @@
+.a-lang-tabs {
+  display: flex;
+  list-style: none;
+
+  &__link {
+    display: flex;
+    padding: 5px;
+    border: 1px solid red;
+  }
+
+  &__list-item {
+
+    &.is-active {
+
+      .a-lang-tabs__link {
+        background-color: red;
+      }
+    }
+  }
+}

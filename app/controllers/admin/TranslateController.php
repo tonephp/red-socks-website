@@ -12,23 +12,71 @@ use app\models\admin\Translate;
 class TranslateController extends AdminController {
 
   public $cacheKey = 'translate';
+  public $appLang;
+  public $appLangs;
 
-  public function indexAction() {
-    $appLang = Tone::$app->getProperty('lang');
-    $appLangs = Tone::$app->getProperty('langs');
+  public function __construct($route) {
+    parent::__construct($route);
 
-    $langs = array_keys($appLangs);
+    $this->appLang = Tone::$app->getProperty('lang');
+    $this->appLangs = Tone::$app->getProperty('langs');
+  }
 
-    if (isset($this->route['lang'])) {
-      $lang = $this->route['lang'];
+  public function addAction() {
+
+    if (isset($this->route['alias'])) {
+      $lang = $this->route['alias'];
     } else {
-      redirect("/admin/translate/{$appLang['code']}");
+      redirect("/admin/translate/add/{$this->appLang['code']}");
+    }
+
+    if (!empty($_POST)) {
+      $model = new Translate();
+
+      if (!$model->checkExists()) {
+        $model->add();
+
+        $this->cacheKey .= $lang;
+      
+        $cache = Tone::$app->cache;
+        $cache->delete($this->cacheKey);
+      } else {
+        $_SESSION['errors'] = "Этот перевод уже существует";
+      }
+
+      redirect();
+    }
+    
+    $langs = $this->appLangs;
+
+    $tabsList = [];
+
+    foreach ($this->appLangs as $langItem) {
+      array_push($tabsList, [
+        "href" => "/admin/translate/add/" . $langItem['alias'],
+        "title" => $langItem['alias'],
+        "active" => $langItem['alias'] == $lang
+      ]);
+    }
+
+    $this->set(compact('lang', 'tabsList'));
+  }
+
+  public function editAction() {
+    $model = new Translate();
+    
+    $langs = array_keys($this->appLangs);
+
+    if (isset($this->route['alias'])) {
+      $lang = $this->route['alias'];
+    } else {
+      redirect("/admin/translate/edit/{$this->appLang['code']}");
     }
 
     $this->cacheKey .= $lang;
 
     if (!empty($_POST)) {
-      $model = new Translate();
+      
       $model->update();
 
       $cache = Tone::$app->cache;
@@ -36,8 +84,6 @@ class TranslateController extends AdminController {
 
       redirect();
     }
-
-    $model = new Model;
 
     $sql = "SELECT * FROM translate WHERE lang_alias = ?";
 
@@ -49,6 +95,16 @@ class TranslateController extends AdminController {
       "TonePHP, Tone PHP, tone php, tonephp framework, admin page"
     );
 
-    $this->set(compact('items', 'lang', 'langs'));
+    $tabsList = [];
+
+    foreach ($this->appLangs as $langItem) {
+      array_push($tabsList, [
+        "href" => "/admin/translate/edit/" . $langItem['alias'],
+        "title" => $langItem['alias'],
+        "active" => $langItem['alias'] == $lang
+      ]);
+    }
+
+    $this->set(compact('items', 'lang', 'tabsList'));
   }
 }

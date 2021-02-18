@@ -8,7 +8,7 @@
 
     <div class="a-header__cell">
       
-      <a href="/admin/translate">Translate</a>
+      <a href="/admin/translate/edit">Translate</a>
       
     </div>
 

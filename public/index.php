@@ -28,9 +28,8 @@ Router::add('^docs/(?P<alias>[a-z-]+)$', ['controller' => 'Docs']);
 
 // default admin routes
 Router::add('^admin$', ['prefix' => 'admin', 'controller' => 'Main', 'action' => 'index']);
-Router::add('^admin/translate/?(?P<lang>[a-z-]+)?$', ['prefix' => 'admin', 'controller' => 'Translate']);
 
-Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
+Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)/?(?P<alias>[a-z-]+)?$', ['prefix' => 'admin']);
 
 // default routes
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);

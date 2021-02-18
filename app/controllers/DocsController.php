@@ -9,7 +9,7 @@ class DocsController extends AppController {
     public function indexAction() {
 
        View::setMeta(
-           "Docs | TonePHP Framework"
+           __('docs_page_title') . " | TonePHP Framework"
        );
 
        $alias = $this->route['alias'] ?? 'get-started';
