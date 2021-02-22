@@ -11,24 +11,47 @@
 </head>
 <body>
   
-  <div class="layout">
-    <div class="layout__header">
-      <?=$this->component('admin/header', ['myVar' => 'headerrrr'])?>
+  <div class="a-layout">
+
+    <div class="a-layout__sidebar">
+      <div class="a-layout__sidebar-body">
+
+        <div class="a-layout__sidebar-header">
+          <a href="/admin" class="a-layout__sidebar-logo">
+            <?=icon('dashboard')?>
+            <span class="a-layout__sidebar-logo-text">Dashboard</span>
+          </a>
+        </div>
+
+        <?=$this->component('admin/nav-item', [
+          'icon' => 'translate',
+          'title' => 'Translate',
+          'href' => '/admin/translate'
+        ])?>
+
+        <?=$this->component('admin/nav-item', [
+          'icon' => 'image',
+          'title' => 'Images',
+          'href' => '/admin/image'
+        ])?>
+
+      </div>
     </div>
-    <div class="layout__content">
+    
+    <div class="a-layout__content">
 
-      <?php if (isset($_SESSION['errors'])): ?>
-        <?=$_SESSION['errors']; unset($_SESSION['errors'])?>
-      <?php endif; ?>
+      <div class="a-layout__content-body">
+        <?php if (isset($_SESSION['errors'])): ?>
+          <?=$_SESSION['errors']; unset($_SESSION['errors'])?>
+        <?php endif; ?>
 
-      <?php if (isset($_SESSION['success'])): ?>
-        <?=$_SESSION['success']; unset($_SESSION['success'])?>
-      <?php endif; ?>
+        <?php if (isset($_SESSION['success'])): ?>
+          <?=$_SESSION['success']; unset($_SESSION['success'])?>
+        <?php endif; ?>
 
-      <?=$content;?>
-    </div>
-    <div class="layout__footer">
-      <?=$this->component('admin/footer')?>
+        <?=$content;?>
+      </div>
+
     </div>
   </div>
   

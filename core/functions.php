@@ -44,3 +44,8 @@ function h($str) {
 function __($key = 'default') {
     return Lang::get($key);
 }
+
+function icon($name) {
+    $icon = APP . '/icons/' . $name . '.svg';
+    return file_get_contents($icon);
+}
