@@ -23,18 +23,38 @@
           </a>
         </div>
 
-        <?=$this->component('admin/nav-item', [
-          'icon' => 'translate',
-          'title' => 'Translate',
-          'href' => '/admin/translate'
-        ])?>
+        <?php if ($isAdmin): ?>
 
-        <?=$this->component('admin/nav-item', [
-          'icon' => 'image',
-          'title' => 'Images',
-          'href' => '/admin/image'
-        ])?>
+          <?=$this->component('admin/nav-item', [
+            'icon' => 'translate',
+            'title' => 'Translate',
+            'href' => '/admin/translate'
+          ])?>
 
+          <?=$this->component('admin/nav-item', [
+            'icon' => 'image',
+            'title' => 'Images',
+            'href' => '/admin/image'
+          ])?>
+          
+          <?=$this->component('admin/nav-item', [
+            'icon' => 'logout',
+            'title' => 'Logout',
+            'href' => '/logout'
+          ])?>
+
+        <?php endif; ?>
+
+        <div class="a-layout__sidebar-footer">
+          <?=$this->component('admin/button', [
+            'href' => siteUrl(),
+            'title' => 'See site',
+            'theme' => 'special',
+            'blank' => true,
+            'icon' => 'external'
+          ])?>
+        </div>
+        
       </div>
     </div>
     

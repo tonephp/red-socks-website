@@ -35,6 +35,6 @@ abstract class Controller {
   }
 
   public function set($vars) {
-    $this->vars = $vars;
+    $this->vars = array_merge($this->vars, $vars);
   }
 }

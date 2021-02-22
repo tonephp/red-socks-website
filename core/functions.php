@@ -49,3 +49,10 @@ function icon($name) {
     $icon = APP . '/icons/' . $name . '.svg';
     return file_get_contents($icon);
 }
+
+function siteUrl() {
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+    $domainName = $_SERVER['HTTP_HOST'].'/';
+    
+    return $protocol.$domainName;
+}

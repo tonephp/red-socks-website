@@ -1,4 +1,10 @@
-.button {
+.a-button {
   background-color: #147af2;
   color: white;
+  display: inline-flex;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
 }
