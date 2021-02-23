@@ -1,5 +1,7 @@
 <?=$this->component('sub-header', ['title' => 'Docs'])?>
 
+<?=$this->component('admin/uploader')?>
+
 <div class="docs">
   <div class="docs__sidebar">
     <ul>

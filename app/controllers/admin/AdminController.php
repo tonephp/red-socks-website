@@ -19,9 +19,13 @@ class AdminController extends Controller {
       isset($this->public) && !$this->public ||
       !isset($this->public)
     ) {
-
+      
       if (!$this->isAdmin) {
-        redirect('/admin/user/login');
+        if (isAjax()) {
+          debug('errorsfdsfsf');
+        } else {
+          redirect('/admin/user/login');
+        }
       }
     }
   }

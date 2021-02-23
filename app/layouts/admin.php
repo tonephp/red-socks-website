@@ -74,7 +74,9 @@
 
     </div>
   </div>
-  
+  <script>
+    var serverUrl = "<?=siteUrl()?>";
+  </script>
   <script src="/dist/admin.js"></script>
 </body>
 </html>
