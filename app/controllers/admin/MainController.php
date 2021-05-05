@@ -8,7 +8,7 @@ class MainController extends AdminController {
 
   public function indexAction() {
 
-    View::setMeta(
+    $this->setMeta(
       "Admin panel | TonePHP Framework",
       "TonePHP Framework admin panel - main page",
       "TonePHP, Tone PHP, tone php, tonephp framework, admin page"

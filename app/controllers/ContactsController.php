@@ -8,7 +8,7 @@ class ContactsController extends AppController {
     
     public function indexAction() {
 
-       View::setMeta(
+       $this->setMeta(
            "Contacts page | TonePHP Framework"
        );
     }

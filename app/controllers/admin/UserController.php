@@ -30,7 +30,7 @@ class UserController extends AdminController {
       }
     }
     
-    View::setMeta(
+    $this->setMeta(
       "Login"
     );
   }

@@ -1,12 +1,6 @@
 {
     "name": "tonephp/tonephp-website",
     "require": {
-        "vlucas/valitron": "^1.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "core\\": "core",
-            "app\\": "app"
-        }
+        "tonephp/tonephp": "^0.1.2"
     }
 }

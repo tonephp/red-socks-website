@@ -93,7 +93,7 @@ class TranslateController extends AdminController {
 
     $items = $model->findBySql($sql, [$lang]);
 
-    View::setMeta(
+    $this->setMeta(
       "Admin panel | TonePHP Framework",
       "TonePHP Framework admin panel - main page",
       "TonePHP, Tone PHP, tone php, tonephp framework, admin page"

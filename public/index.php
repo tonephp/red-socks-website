@@ -6,17 +6,22 @@ use core\Tone;
 $query = $_SERVER['QUERY_STRING'];
 $query = rtrim($query, '/');
 
-define("DEBUG", 1);
 define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
-define('CORE', ROOT . '/core');
 define('APP', ROOT . '/app');
 define('CACHE', ROOT . '/tmp/cache');
+define('CONFIG', ROOT . '/config');
 define('LAYOUT', 'default');
 
 require '../vendor/autoload.php';
 
-require '../core/functions.php';
+Tone::requireFunctions();
+require '../app/functions.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(WWW . '/..');
+$dotenv->load();
+
+define("DEBUG", $_ENV['DEBUG']);
 
 new Tone;
 

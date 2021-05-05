@@ -9,7 +9,7 @@ class MainController extends AppController {
     
     public function indexAction() {
     
-       View::setMeta(
+       $this->setMeta(
            __('page_title')
        );
        

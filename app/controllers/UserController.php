@@ -33,7 +33,7 @@ class UserController extends AppController {
             $_SESSION['success'] = "Вы успешно зарегистрированы!";
         }
 
-        View::setMeta(
+        $this->setMeta(
             "Registration | TonePHP Framework"
         );
 
@@ -59,7 +59,7 @@ class UserController extends AppController {
             redirect();
         }
 
-        View::setMeta(
+        $this->setMeta(
             "Login | TonePHP Framework"
         );
     }

@@ -1,10 +1,11 @@
 <?php
 
-namespace core\base;
+namespace app\widgets\translate;
 
 use core\Tone;
+use core\base\Model;
 
-class Lang {
+class Translate {
 
   public static $data = [];
   public static $layout = [];
