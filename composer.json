@@ -1,6 +1,6 @@
 {
     "name": "tonephp/tonephp-website",
     "require": {
-        "tonephp/tonephp": "^0.1.8"
+        "tonephp/tonephp": "^0.1.9"
     }
 }
