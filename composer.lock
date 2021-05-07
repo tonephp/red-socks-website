@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b2aa4afca9d7036a024be8fb62cb202",
+    "content-hash": "696291cee44c81148a6bcf365d51fc6a",
     "packages": [
         {
             "name": "phpoption/phpoption",
@@ -156,16 +156,16 @@
         },
         {
             "name": "tonephp/tonephp",
-            "version": "0.1.2",
+            "version": "0.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tonephp/tonephp.git",
-                "reference": "124c5d41183b294836fbaeb08d3568f57aa1d24d"
+                "reference": "3ec153eea4ad62295f884e3b5cdef0e5fca00d69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tonephp/tonephp/zipball/124c5d41183b294836fbaeb08d3568f57aa1d24d",
-                "reference": "124c5d41183b294836fbaeb08d3568f57aa1d24d",
+                "url": "https://api.github.com/repos/tonephp/tonephp/zipball/3ec153eea4ad62295f884e3b5cdef0e5fca00d69",
+                "reference": "3ec153eea4ad62295f884e3b5cdef0e5fca00d69",
                 "shasum": ""
             },
             "require": {
@@ -193,9 +193,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tonephp/tonephp/issues",
-                "source": "https://github.com/tonephp/tonephp/tree/0.1.2"
+                "source": "https://github.com/tonephp/tonephp/tree/0.1.8"
             },
-            "time": "2021-05-03T18:41:03+00:00"
+            "time": "2021-05-07T15:58:02+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
