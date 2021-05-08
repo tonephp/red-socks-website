@@ -2,8 +2,10 @@
 
 namespace app\controllers\admin;
 
+use core\Tone;
 use core\base\Controller;
 use app\models\User;
+use app\widgets\lang\Lang;
 
 class AdminController extends Controller {
   public $layout = 'admin';
@@ -14,6 +16,8 @@ class AdminController extends Controller {
     $isAdmin = $this->isAdmin = User::isAdmin();
 
     $this->set(compact('isAdmin'));
+
+    $this->loadLangs();
 
     if (
       isset($this->public) && !$this->public ||
@@ -28,5 +32,13 @@ class AdminController extends Controller {
         }
       }
     }
+  }
+
+  public function loadLangs() {
+    $langs = Lang::getLangs();
+    $lang = Lang::getLang($langs);
+
+    Tone::$app->setProperty('langs', $langs);
+    Tone::$app->setProperty('lang', $lang);
   }
 }
