@@ -1,5 +1,6 @@
 .info {
   padding: 20px;
+  background-color: #9a9a9a;
 
   &__title {
     padding-top: 20px;
@@ -7,7 +8,8 @@
   }
 
   &__link {
-    color: #1976d2;
+    //color: #1976d2;
+    color: white;
     margin: 5px;
   }
 

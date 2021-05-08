@@ -20,7 +20,15 @@
           <?php endif; ?>
 
           <?php if (isset($item['link'])): ?>
-            <a href="<?=$item['link']['href']?>" class="info__link">
+            <?php 
+              $target = $item['link']['target'] ?? null;
+              $target = $target ? " target='$target'" : null;
+            ?>
+            <a 
+              href="<?=$item['link']['href']?>" 
+              class="info__link"
+              <?=$target?>
+            >
               <?=$item['link']['title']?>
             </a>
           <?php endif; ?>
