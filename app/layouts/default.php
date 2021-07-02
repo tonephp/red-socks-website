@@ -6,6 +6,9 @@
   <meta name="author" content="TonePHP Framework">
   <?=$this::getMeta(); ?>
   <link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
   
   <link href="/dist/styles.css" rel="stylesheet">
 </head>

@@ -3,13 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: black;
-  width: 72px;
   height: 72px;
   text-align: center;
-  
+  font-family: 'Cabin', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+
   &:hover {
-    color: transparentize(white, 0.3);
+    color: transparentize(black, 0.4);
   }
 }
