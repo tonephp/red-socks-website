@@ -1,1 +1,1 @@
-404 not found
+<?=$this->component('not-found')?>

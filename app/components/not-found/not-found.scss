@@ -1,0 +1,21 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__number {
+    font-size: 150px;
+    font-weight: bold;
+    color: $light-background;
+    line-height: 130px;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+    margin-bottom: 20px;
+  }
+
+  &__message {
+    margin-bottom: 40px;
+    font-size: 40px;
+  }
+}
