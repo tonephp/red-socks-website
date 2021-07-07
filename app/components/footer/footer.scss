@@ -1,13 +1,21 @@
 .footer {
-  background-color: $dark-grey;
-  color: #696969;
-  padding: 20px;
+  background-color: $light-background;
 
+  &__services {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: center;
+  }
 
-  &__links {
-    
-    a {
-      color: white;
-    }
+  &__service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__service-text {
+    color: $grey-text;
+    margin-bottom: 10px;
   }
 }

@@ -1,4 +1,30 @@
 .button {
-  background-color: #147af2;
-  color: white;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: 0;
+  transition: 0.1s;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &--theme {
+    &--primary {
+      background-color: $color-primary;
+      padding: 11px 31px;
+      color: white;
+    }
+
+    &--bordered-primary {
+      background-color: transparent;
+      border: 1px solid $color-primary;
+      color: $color-primary;
+    }
+  }
 }

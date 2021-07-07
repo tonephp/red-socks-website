@@ -1,3 +1,3 @@
 <a class="logo" href="/">
-  TonePHP
+  <?=icon('logo')?>
 </a>

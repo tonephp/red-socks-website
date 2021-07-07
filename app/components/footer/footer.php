@@ -1,19 +1,12 @@
-<div class="footer">
-  <div class="footer__cell">
-    Copyright © <?=date("Y")?> TonePHP Framework
-  </div>
-
-  <div class="footer__cell">
-    <div class="footer__links">
-      <?php if ($this->isAuth()): ?>
-        <a href="/logout">Logout</a>
-      <?php else: ?>
-        <a href="/login">Login</a>
-        <a href="/signup">Sign Up</a>
-        |
-        <a href="/admin/user/login">Login as Admin</a>
-      <?php endif; ?>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__services">
+      <div class="footer__service">
+        <p class="footer__service-text">
+          Hosting by
+        </p>
+        <a class="footer__service-image" href="https://www.ukraine.com.ua/?page=108004" title="Хостинг Украина" target="_blank"><img src="https://www.ukraine.com.ua/img/banners/ukraine_1.gif" title="Хостинг Украина" border="0" alt="Hosting Ukraine"/></a>
+      </div>
     </div>
   </div>
-  
-</div>
+</footer>

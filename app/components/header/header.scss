@@ -5,10 +5,6 @@
   &__cells {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__cell {
-    display: flex;
-    align-items: center;
+    padding-top: 30px;
   }
 }
