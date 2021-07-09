@@ -1,0 +1,7 @@
+@mixin hoverEffect {
+  transition: 0.1s;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}

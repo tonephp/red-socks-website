@@ -1,32 +1,60 @@
-<?=$this->component('sub-header', ['title' => 'Docs'])?>
+<div class="container">
+  <?=$this->component('sub-header', ['title' => 'Docs'])?>
 
-<div class="docs">
-  <div class="docs__sidebar">
-    <ul>
-      <li><a href="/docs/get-started">Get started</a></li>
-      <li><a href="/docs/create-component">Create component</a></li>
-      <li>
-        <h3>Widgets</h3>
-        <ul>
-          <li><a href="/docs/create-menu-widget">Create menu widget</a></li>
-        </ul>
-      </li>
-      <li>
-        <h3>Composer</h3>
-        <ul>
-          <li><a href="/docs/use-composer">Use composer</a></li>
-        </ul>
-      </li>
-      <li>
-        <h3>Packages</h3>
-        <ul>
-          <li><a href="/docs/install-monolog">monolog/monolog</a></li>
-          <li><a href="/docs/install-php-mailer">phpmailer/phpmailer</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div class="docs__content">
-    <?=$docContent?>
+  <div class="docs">
+    <div class="docs__sidebar">
+      <?=$this->component('tree-menu', [
+        "list" => [
+          [
+            "title" => "Get started",
+            "icon" => "start",
+            "list" => [
+              [
+                "title" => "Installation",
+                "href" => "/docs/installation"
+              ],
+              [
+                "title" => "Configuration",
+                "list" => [
+                  [
+                    "title" => "DB",
+                    "href" => "/docs/configuration-db"
+                  ],
+                  [
+                    "title" => "Main",
+                    "href" => "/docs/configuration-main"
+                  ],
+                  [
+                    "title" => "Params",
+                    "href" => "/docs/configuration-params"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "title" => "The basics",
+            "icon" => "basics",
+            "list" => [
+              [
+                "title" => "Routing",
+                "href" => "/docs/routing"
+              ],
+              [
+                "title" => "Controllers",
+                "href" => "/docs/controllers"
+              ],
+              [
+                "title" => "Components",
+                "href" => "/docs/components"
+              ],
+            ]
+          ]
+        ]
+      ])?>
+    </div>
+    <div class="docs__content">
+      <?=$docContent?>
+    </div>
   </div>
 </div>

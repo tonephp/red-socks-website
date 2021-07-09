@@ -2,17 +2,20 @@
 @import "./scss/reset.scss";
 @import "./scss/gist-reset.scss";
 @import "./scss/layout.scss";
+@import "./scss/mixins.scss";
 
 @import "../components/container/container.scss";
 @import "../components/header/header.scss";
 @import "../components/footer/footer.scss";
 @import "../components/docs/docs.scss";
+@import "../components/doc/doc.scss";
 @import "../components/logo/logo.scss";
 @import "../components/button/button.scss";
 @import "../components/sub-header/sub-header.scss";
 @import "../components/hero/hero.scss";
 @import "../components/info/info.scss";
 @import "../components/not-found/not-found.scss";
+@import "../components/tree-menu/tree-menu.scss";
 
 @import "../widgets/menu/templates/menu.scss";
 @import "../widgets/lang/templates/lang-dropdown/lang-dropdown.scss";

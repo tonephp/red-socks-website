@@ -12,7 +12,13 @@ class DocsController extends AppController {
            __('docs_page_title') . " | TonePHP Framework"
        );
 
+       
+
        $alias = $this->route['alias'] ?? 'get-started';
+
+       if ($alias == 'get-started') {
+         redirect('/docs/installation');
+       }
 
        $docContent = $this->loadView("pages/Docs/pages/{$alias}");
 
