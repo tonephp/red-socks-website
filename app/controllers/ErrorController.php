@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-class ErrorControllerr extends AppController {
+class ErrorController extends AppController {
     
     public function indexAction() {
       $this->setMeta('Page not found');

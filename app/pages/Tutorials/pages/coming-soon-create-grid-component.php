@@ -40,3 +40,5 @@
 
 <h2>6. See result</h2>
 <p>Open this link - <a href="http://localhost:40001" target="_blank">http://localhost:40001</a></p>
+<p>You should see the site like on the picture:</p>
+<img src="/img/tutorials/coming-soon-step-1.jpg" alt="coming-soon-step-1" class="doc__image" />
