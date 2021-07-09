@@ -10,4 +10,14 @@ class TutorialsController extends AppController {
            "Tutorials"
        );
     }
+
+    public function tutorialAction() {
+        $alias = $this->route['alias'];
+
+        $this->setMeta(
+            "Tutorial - $alias"
+        );
+
+        $this->set(compact('alias'));
+     }
 }

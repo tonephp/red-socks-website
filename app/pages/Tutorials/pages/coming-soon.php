@@ -1,0 +1,1 @@
+<?php require(APP . "/pages/Docs/pages/installation.php")?>

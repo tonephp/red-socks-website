@@ -12,5 +12,5 @@ function doc($file) {
     $fileContent = str_replace('>', '&gt;', $fileContent);
     $fileContent = str_replace('?', '&#63;', $fileContent);
     
-    debug($fileContent);
+    return $fileContent;
 }

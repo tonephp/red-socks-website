@@ -7,7 +7,7 @@
 <div class="tree-menu js-tree-menu">
   <?php foreach ($list as $mainSection) : ?>
 
-  <div class="tree-menu__main-section js-main-section">
+  <div class="tree-menu__main-section js-main-section <?=isset($mainSection['open']) && $mainSection['open'] ? 'is-open' : null?>">
     <div class="tree-menu__main-section-header js-main-section-header">
       <span class="tree-menu__arrow">
         <?=icon('arrow')?>

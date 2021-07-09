@@ -8,7 +8,7 @@ class ImageController extends AdminController {
     
     if (!empty($_FILES)) {
       foreach ($_FILES as $file) {
-        debug($file);
+
         move_uploaded_file($file['tmp_name'], WWW . '/uploads/' . $file['name']);
       }
 

@@ -15,7 +15,7 @@ services:
     volumes:
       - ./:/var/www/html/
     ports:
-      - "40001:80"
+      - "50001:80"
     container_name: tonephp-app
   mysql:
     image: mysql:5.7
@@ -34,7 +34,7 @@ services:
     networks:
       - backend
     ports:
-      - "40002:80"
+      - "50002:80"
     environment:
       - PMA_HOST=tonephp-mysql-app
       - PMA_PORT=3306

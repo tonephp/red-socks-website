@@ -1,0 +1,11 @@
+.p-tutorials {
+  &__list {
+    display: flex;
+  }
+
+  &__card {
+    width: 33.33333%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}

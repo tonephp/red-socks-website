@@ -1,0 +1,24 @@
+.tutorial-card {
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  color: white;
+  text-decoration: none;
+
+  &__title {
+    font-size: 30px;
+  }
+
+  &__description {
+    font-size: 18px;
+  }
+
+  &__icon {
+    svg {
+      width: 100%;
+      height: auto;
+      fill: white;
+    }
+  }
+}

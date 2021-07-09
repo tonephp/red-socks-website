@@ -1,0 +1,36 @@
+.grid {
+  display: flex;
+  height: 100vh;
+
+  &__item {
+    width: 50%;
+    box-sizing: border-box;
+
+    &--content {
+      display: flex;
+      justify-content: flex-end;
+      padding-left: 20px;
+    }
+
+    &--bg {
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    max-width: 100%;
+  }
+
+  &__header {
+    padding-top: 20px;
+  }
+
+  &__footer {
+    padding-bottom: 20px;
+  }
+}
