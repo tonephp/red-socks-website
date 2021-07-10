@@ -35,15 +35,15 @@ npm start
   </code>
 </pre>
 
-<h2>4. Import database</h2>
+<h2>4. Enjoy the site!</h2>
+<p>Open this link - <a href="http://localhost:40001" target="_blank">http://localhost:40001</a></p>
+<p>You should see the site like on the picture:</p>
+<img src="/img/docs/starter-kit-main-page.png" alt="starter-kit-main-page" class="doc__image" />
+
+
+<h3>You has access to phpmyadmin</h3>
 
 <p>4.1. Open phpmyadmin - <a href="http://localhost:40002" target="_blank">http://localhost:40002</a></p>
 <p>4.2. Use this credentials to login:</p>
 <p>username: <b>user</b></p>
 <p>password: <b>password</b></p>
-<p>4.3. Import database <b>starter_kit_db.sql</b>. You can find this file in root directory.</p>
-
-<h2>5. Enjoy the site!</h2>
-<p>Open this link - <a href="http://localhost:40001" target="_blank">http://localhost:40001</a></p>
-<p>You should see the site like on the picture:</p>
-<img src="/img/docs/starter-kit-main-page.png" alt="starter-kit-main-page" class="doc__image" />
