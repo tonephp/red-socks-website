@@ -1,0 +1,1 @@
+<h1>Create Coming Soon Component</h1>

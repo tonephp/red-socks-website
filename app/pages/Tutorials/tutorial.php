@@ -16,6 +16,14 @@
                 "title" => "Create Grid Component",
                 "href" => "/tutorials/coming-soon-create-grid-component"
               ],
+              [
+                "title" => "Update Logo Component",
+                "href" => "/tutorials/coming-soon-update-logo-component"
+              ],
+              [
+                "title" => "Create Coming Soon Component",
+                "href" => "/tutorials/coming-soon-create-coming-soon-component"
+              ],
             ]
           ],
         ]
