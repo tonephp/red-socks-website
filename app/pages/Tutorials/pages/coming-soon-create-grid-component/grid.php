@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div class="grid__item grid__item--bg" style="background-image: url('/img/coming-soon-bg.jpg')">
+  <div class="grid__item grid__item--bg" style="background-image: url('/img/coming-soon-bg.jpeg')">
     
   </div>
 </div>
