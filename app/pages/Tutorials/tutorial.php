@@ -36,6 +36,18 @@
                 "title" => "Create email-form Component",
                 "href" => "/tutorials/coming-soon-create-email-form-component"
               ],
+              [
+                "title" => "Create Database Table - subscriber",
+                "href" => "/tutorials/coming-soon-create-table-subscriber"
+              ],
+              [
+                "title" => "Create Subscriber model",
+                "href" => "/tutorials/coming-soon-create-subscriber-model"
+              ],
+              [
+                "title" => "Update Main Controller",
+                "href" => "/tutorials/coming-soon-update-main-controller"
+              ],
             ]
           ],
         ]
