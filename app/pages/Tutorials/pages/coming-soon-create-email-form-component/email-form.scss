@@ -1,0 +1,39 @@
+.email-form {
+  &.is-loading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &.is-success {
+    .email-form__success-message {
+      display: block;
+    }
+  }
+
+  &__group {
+    display: flex;
+  }
+
+  &__success-message {
+    display: none;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  &__button-wrapper {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+
+  &__input {
+    width: 250px;
+    max-width: 100%;
+    padding: 10px 20px;
+    border: 1px solid gray;
+    border-right: none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    display: inline-block;
+    margin: 0;
+  }
+}

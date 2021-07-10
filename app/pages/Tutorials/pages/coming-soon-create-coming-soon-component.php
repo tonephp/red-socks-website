@@ -14,7 +14,7 @@
   </code>
 </pre>
 
-<h2>3. Import coming-soon.scss into app/src/scss/styles.scss</h2>
+<h2>3. Import coming-soon.scss into app/src/styles.scss</h2>
 <pre>
   <code class="language-scss">
 ...

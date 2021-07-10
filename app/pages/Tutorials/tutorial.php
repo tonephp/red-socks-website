@@ -13,16 +13,28 @@
                 "href" => "/tutorials/coming-soon"
               ],
               [
-                "title" => "Create Grid Component",
+                "title" => "Create grid Component",
                 "href" => "/tutorials/coming-soon-create-grid-component"
               ],
               [
-                "title" => "Update Logo Component",
+                "title" => "Update logo Component",
                 "href" => "/tutorials/coming-soon-update-logo-component"
               ],
               [
-                "title" => "Create Coming Soon Component",
+                "title" => "Create coming-soon Component",
                 "href" => "/tutorials/coming-soon-create-coming-soon-component"
+              ],
+              [
+                "title" => "Create loader Component",
+                "href" => "/tutorials/coming-soon-create-loader-component"
+              ],
+              [
+                "title" => "Update button Component",
+                "href" => "/tutorials/coming-soon-update-button-component"
+              ],
+              [
+                "title" => "Create email-form Component",
+                "href" => "/tutorials/coming-soon-create-email-form-component"
               ],
             ]
           ],
