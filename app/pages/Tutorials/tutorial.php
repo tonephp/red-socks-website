@@ -48,6 +48,10 @@
                 "title" => "Update Main Controller",
                 "href" => "/tutorials/coming-soon-update-main-controller"
               ],
+              [
+                "title" => "Final Check",
+                "href" => "/tutorials/coming-soon-final-check"
+              ],
             ]
           ],
         ]
