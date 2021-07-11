@@ -12,12 +12,20 @@ class TutorialsController extends AppController {
     }
 
     public function tutorialAction() {
-        $alias = $this->route['alias'];
+        $alias = $this->route['alias'] ?? null;
+        $section = $this->route['section'] ?? null;
+
+        if (!$section) {
+
+            if ($alias == 'coming-soon') {
+                redirect("/tutorials/$alias/installation");
+            }
+        }
 
         $this->setMeta(
-            "Tutorial - $alias"
+            "Tutorial - $alias - $section"
         );
 
-        $this->set(compact('alias'));
+        $this->set(compact('alias', 'section'));
      }
 }

@@ -8,6 +8,7 @@
           [
             "title" => "Get started",
             "icon" => "start",
+            "open" => true,
             "list" => [
               [
                 "title" => "Installation",
@@ -35,10 +36,16 @@
           [
             "title" => "The basics",
             "icon" => "basics",
+            "open" => true,
             "list" => [
               [
                 "title" => "Routing",
-                "href" => "/docs/routing"
+                "list" => [
+                  [
+                    "title" => "Custom 404 page",
+                    "href" => "/docs/routing-custom-404"
+                  ],
+                ]
               ],
               [
                 "title" => "Controllers",

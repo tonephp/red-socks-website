@@ -1,0 +1,1 @@
+<?=$this->component('not-found')?>

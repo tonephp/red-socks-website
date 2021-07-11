@@ -3,14 +3,14 @@
 <h2>1. Update file app/components/logo/logo.php</h2>
 <pre>
   <code class="language-php">
-<?=doc('/pages/Tutorials/pages/coming-soon-update-logo-component/logo.php')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/update-logo-component/logo.php')?>
   </code>
 </pre>
 
 <h2>2. Update file app/components/logo/logo.scss</h2>
 <pre>
   <code class="language-scss">
-<?=doc('/pages/Tutorials/pages/coming-soon-update-logo-component/logo.scss')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/update-logo-component/logo.scss')?>
   </code>
 </pre>
 
@@ -18,7 +18,7 @@
 <p>Paste this code in the block with class "grid__header"</p>
 <pre>
   <code class="language-php">
-<?=doc('/pages/Tutorials/pages/coming-soon-update-logo-component/grid.php')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/update-logo-component/grid.php')?>
   </code>
 </pre>
 <p>grid.php should looks like on the picture:</p>

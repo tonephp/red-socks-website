@@ -3,14 +3,14 @@
 <h2>1. Create file app/components/grid/grid.php</h2>
 <pre>
   <code class="language-php">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-grid-component/grid.php')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-grid-component/grid.php')?>
   </code>
 </pre>
 
 <h2>2. Create file app/components/grid/grid.scss</h2>
 <pre>
   <code class="language-scss">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-grid-component/grid.scss')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-grid-component/grid.scss')?>
   </code>
 </pre>
 
@@ -26,7 +26,7 @@
 <h2>4. Use grid component in app/pages/Main/index.php</h2>
 <pre>
   <code class="language-php">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-grid-component/pages-main-index.php')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-grid-component/pages-main-index.php')?>
   </code>
 </pre>
 

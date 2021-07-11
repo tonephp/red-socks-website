@@ -3,14 +3,14 @@
 <h2>1. Create file app/components/email-form/email-form.php</h2>
 <pre>
   <code class="language-php">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-email-form-component/email-form.php')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-email-form-component/email-form.php')?>
   </code>
 </pre>
 
 <h2>2. Create file app/components/email-form/email-form.scss</h2>
 <pre>
   <code class="language-scss">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-email-form-component/email-form.scss')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-email-form-component/email-form.scss')?>
   </code>
 </pre>
 
@@ -27,7 +27,7 @@
 <p>Replace FORM text with this code</p>
 <pre>
   <code class="language-php">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-email-form-component/coming-soon.php')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-email-form-component/coming-soon.php')?>
   </code>
 </pre>
 <p>coming-soon.php should looks like on the picture:</p>
@@ -36,7 +36,7 @@
 <h2>5. Create file app/components/email-form/email-form.js</h2>
 <pre>
   <code class="language-javascript">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-email-form-component/email-form.js')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-email-form-component/email-form.js')?>
   </code>
 </pre>
 
@@ -51,7 +51,7 @@ import '../components/email-form/email-form';
 <h2>7. Create file app/src/axios.js</h2>
 <pre>
   <code class="language-js">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-email-form-component/axios.js')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-email-form-component/axios.js')?>
   </code>
 </pre>
 

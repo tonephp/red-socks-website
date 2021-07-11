@@ -16,7 +16,7 @@
 
 <pre>
   <code class="language-sql">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-table-subscriber/subscriber.sql')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-table-subscriber/subscriber.sql')?>
   </code>
 </pre>
 

@@ -5,8 +5,8 @@ Router::add('^login$', ['controller' => 'User', 'action' => 'login']);
 Router::add('^signup$', ['controller' => 'User', 'action' => 'signup']);
 Router::add('^logout$', ['controller' => 'User', 'action' => 'logout']);
 
-Router::add('^docs/(?P<alias>[a-z-]+)$', ['controller' => 'Docs']);
-Router::add('^tutorials/(?P<alias>[a-z-]+)$', ['controller' => 'Tutorials', 'action' => 'tutorial']);
+Router::add('^docs/(?P<alias>[A-Za-z0-9-]+)$', ['controller' => 'Docs']);
+Router::add('^tutorials/(?P<alias>[a-z-]+)?/?(?P<section>[a-z-]+)?$', ['controller' => 'Tutorials', 'action' => 'tutorial']);
 
 // default admin routes
 Router::add('^admin$', ['prefix' => 'admin', 'controller' => 'Main', 'action' => 'index']);

@@ -3,14 +3,14 @@
 <h2>1. Create file app/components/coming-soon/coming-soon.php</h2>
 <pre>
   <code class="language-php">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-coming-soon-component/coming-soon.php')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-coming-soon-component/coming-soon.php')?>
   </code>
 </pre>
 
 <h2>2. Create file app/components/coming-soon/coming-soon.scss</h2>
 <pre>
   <code class="language-scss">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-coming-soon-component/coming-soon.scss')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-coming-soon-component/coming-soon.scss')?>
   </code>
 </pre>
 
@@ -27,7 +27,7 @@
 <p>Paste this code in the block with class "grid__main"</p>
 <pre>
   <code class="language-php">
-<?=doc('/pages/Tutorials/pages/coming-soon-create-coming-soon-component/grid.php')?>
+<?=doc('/pages/Tutorials/pages/coming-soon/files/create-coming-soon-component/grid.php')?>
   </code>
 </pre>
 <p>grid.php should looks like on the picture:</p>
