@@ -20,6 +20,10 @@ class TutorialsController extends AppController {
             if ($alias == 'coming-soon') {
                 redirect("/tutorials/$alias/installation");
             }
+            if ($alias == 'pick-colors') {
+                redirect("/tutorials/$alias/video-link");
+            }
+            
         }
 
         $this->setMeta(

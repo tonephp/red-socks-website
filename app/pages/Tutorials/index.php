@@ -13,6 +13,15 @@
           "bg" => "rgb(1 122 254)"
         ])?>
       </div>
+      <div class="p-tutorials__card">
+        <?=$this->component('tutorial-card', [
+          "href" => "/tutorials/pick-colors",
+          "title" => "Picking colors",
+          "description" => "Pick colors like a pro",
+          "image" => "/img/tutorials/colors/colors.png",
+          "bg" => "rgb(199, 199, 199)"
+        ])?>
+      </div>
     </div>
   </div>
 </div>
