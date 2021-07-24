@@ -22,6 +22,15 @@
           "bg" => "rgb(199, 199, 199)"
         ])?>
       </div>
+      <div class="p-tutorials__card">
+        <?=$this->component('tutorial-card', [
+          "href" => "/tutorials/gatsby-prismic",
+          "title" => "Gatsby + Prismic",
+          "description" => "Create Gatsby project with Prismic Headless CMS",
+          "image" => "/img/tutorials/gatsby-prismic/gatsby-prismic.png",
+          "bg" => "#7026B9"
+        ])?>
+      </div>
     </div>
   </div>
 </div>

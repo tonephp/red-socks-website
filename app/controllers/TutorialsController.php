@@ -17,7 +17,10 @@ class TutorialsController extends AppController {
 
         if (!$section) {
 
-            if ($alias == 'coming-soon') {
+            if (
+                $alias == 'coming-soon' ||
+                $alias == 'gatsby-prismic'
+            ) {
                 redirect("/tutorials/$alias/installation");
             }
             if ($alias == 'pick-colors') {
