@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: tonephp-mysql-app:3306
--- Generation Time: Jul 07, 2021 at 12:43 PM
+-- Generation Time: Jul 24, 2021 at 08:25 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.2.2
 
@@ -21,29 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `tonephp_db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lang`
---
-
-CREATE TABLE `lang` (
-  `id` int(11) NOT NULL,
-  `alias` varchar(255) NOT NULL,
-  `code` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `base` enum('0','1') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `lang`
---
-
-INSERT INTO `lang` (`id`, `alias`, `code`, `title`, `base`) VALUES
-(3, 'ru', 'ru', 'Ru', '0'),
-(4, 'en', 'en', 'En', '0'),
-(5, 'ua', 'ua', 'Ua', '1');
 
 -- --------------------------------------------------------
 
@@ -87,42 +64,11 @@ CREATE TABLE `menuitems_translate` (
 --
 
 INSERT INTO `menuitems_translate` (`id`, `menuitem_alias`, `lang_alias`, `value`) VALUES
-(1, 'home', 'ru', 'Главная'),
-(2, 'docs', 'ru', 'Документация'),
-(3, 'contacts', 'ru', 'Контакты'),
 (4, 'home', 'en', 'Main'),
 (5, 'contacts', 'en', 'Contacts'),
 (6, 'docs', 'en', 'Docs'),
-(7, 'home', 'ua', 'Головна'),
-(8, 'docs', 'ua', 'Документація'),
-(9, 'contacts', 'ua', 'Контакти'),
 (10, 'tutorials', 'en', 'Tutorials'),
 (11, 'shop', 'en', 'Shop');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `translate`
---
-
-CREATE TABLE `translate` (
-  `id` int(11) NOT NULL,
-  `alias` varchar(255) NOT NULL,
-  `lang_alias` varchar(255) NOT NULL,
-  `value` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `translate`
---
-
-INSERT INTO `translate` (`id`, `alias`, `lang_alias`, `value`) VALUES
-(1, 'hero_description', 'en', 'Web-framework with good documentation!'),
-(2, 'hero_description', 'ru', 'Веб-фреймворк с хорошей документацией'),
-(3, 'hero_description', 'ua', 'Веб-фреймворк з гарною документаціею'),
-(4, 'read_docs', 'en', 'Read docs'),
-(5, 'read_docs', 'ua', 'Читати документацію'),
-(6, 'read_docs', 'ru', 'Читать документацию');
 
 -- --------------------------------------------------------
 
@@ -152,12 +98,6 @@ INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `role`) VALUES
 --
 
 --
--- Indexes for table `lang`
---
-ALTER TABLE `lang`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `menuitems`
 --
 ALTER TABLE `menuitems`
@@ -167,12 +107,6 @@ ALTER TABLE `menuitems`
 -- Indexes for table `menuitems_translate`
 --
 ALTER TABLE `menuitems_translate`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `translate`
---
-ALTER TABLE `translate`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -188,12 +122,6 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `lang`
---
-ALTER TABLE `lang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT for table `menuitems`
 --
 ALTER TABLE `menuitems`
@@ -204,12 +132,6 @@ ALTER TABLE `menuitems`
 --
 ALTER TABLE `menuitems_translate`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `translate`
---
-ALTER TABLE `translate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
