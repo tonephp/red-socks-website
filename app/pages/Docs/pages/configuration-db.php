@@ -12,6 +12,6 @@
 
 <pre>
   <code>
-<?=doc('/pages/Docs/pages/configuration-db/.env')?>
+<?=doc('/pages/Docs/pages/configuration-db/.env.example')?>
   </code>
 </pre>
