@@ -9,6 +9,10 @@
           "title" => "Installation",
           "href" => "/tutorials/gatsby-prismic/installation"
         ],
+        [
+          "title" => "Prismic setup",
+          "href" => "/tutorials/gatsby-prismic/prismic-setup"
+        ],
       ]
     ],
   ]
