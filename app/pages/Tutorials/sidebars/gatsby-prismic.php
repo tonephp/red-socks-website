@@ -17,6 +17,10 @@
           "title" => "Linking gatsby",
           "href" => "/tutorials/gatsby-prismic/linking-gatsby"
         ],
+        [
+          "title" => "Create template",
+          "href" => "/tutorials/gatsby-prismic/create-template"
+        ],
       ]
     ],
   ]
