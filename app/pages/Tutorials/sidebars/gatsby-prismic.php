@@ -13,6 +13,10 @@
           "title" => "Prismic setup",
           "href" => "/tutorials/gatsby-prismic/prismic-setup"
         ],
+        [
+          "title" => "Linking gatsby",
+          "href" => "/tutorials/gatsby-prismic/linking-gatsby"
+        ],
       ]
     ],
   ]
