@@ -4,7 +4,7 @@
       <?php require(APP . "/pages/Tutorials/sidebars/{$alias}.php")?>
     </div>
     <div class="p-tutorial__content">
-      <?php require(APP . "/pages/Tutorials/pages/$alias/$section.php")?>
+      <?php customRequire(APP . "/pages/Tutorials/pages/$alias/$section.php")?>
     </div>
   </div>
 </div>

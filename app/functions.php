@@ -8,3 +8,11 @@ function doc($file) {
     
     return $fileContent;
 }
+
+function customRequire($path) {
+    if (file_exists($path)) {
+        require($path);
+    } else {
+        echo "Page not found";
+    }
+}

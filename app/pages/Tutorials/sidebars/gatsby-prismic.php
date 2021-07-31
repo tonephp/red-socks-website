@@ -29,6 +29,18 @@
           "title" => "Deploy",
           "href" => "/tutorials/gatsby-prismic/deploy"
         ],
+        [
+          "title" => "Styling Header",
+          "href" => "/tutorials/gatsby-prismic/styling-header"
+        ],
+        [
+          "title" => "Add Navigation Item",
+          "href" => "/tutorials/gatsby-prismic/add-navigation-item"
+        ],
+        [
+          "title" => "Custom RichText Component",
+          "href" => "/tutorials/gatsby-prismic/custom-rich-text"
+        ],
       ]
     ],
   ]
