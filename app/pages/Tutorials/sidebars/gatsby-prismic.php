@@ -25,6 +25,10 @@
           "title" => "Add navigation",
           "href" => "/tutorials/gatsby-prismic/add-navigation"
         ],
+        [
+          "title" => "Deploy",
+          "href" => "/tutorials/gatsby-prismic/deploy"
+        ],
       ]
     ],
   ]
