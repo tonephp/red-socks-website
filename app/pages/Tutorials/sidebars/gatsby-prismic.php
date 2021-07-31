@@ -21,6 +21,10 @@
           "title" => "Create template",
           "href" => "/tutorials/gatsby-prismic/create-template"
         ],
+        [
+          "title" => "Add navigation",
+          "href" => "/tutorials/gatsby-prismic/add-navigation"
+        ],
       ]
     ],
   ]
