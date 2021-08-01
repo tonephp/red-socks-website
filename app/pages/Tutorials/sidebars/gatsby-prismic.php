@@ -41,6 +41,10 @@
           "title" => "Custom RichText Component",
           "href" => "/tutorials/gatsby-prismic/custom-rich-text"
         ],
+        [
+          "title" => "Add Branding",
+          "href" => "/tutorials/gatsby-prismic/add-branding"
+        ],
       ]
     ],
   ]
