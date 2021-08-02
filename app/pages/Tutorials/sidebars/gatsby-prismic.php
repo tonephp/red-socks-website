@@ -45,6 +45,10 @@
           "title" => "Add Branding",
           "href" => "/tutorials/gatsby-prismic/add-branding"
         ],
+        [
+          "title" => "Hero Slice",
+          "href" => "/tutorials/gatsby-prismic/hero-slice"
+        ],
       ]
     ],
   ]
