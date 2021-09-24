@@ -1,24 +1,24 @@
 .button {
   display: inline-block;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   border: none;
   padding: 10px 30px;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 6px;
   text-decoration: none;
   margin: 0;
-  transition: 0.1s;
+  transition: 0.3s;
 
   &:hover {
-    transform: translateY(-1px);
+    opacity: 0.9;
   }
 
   &--theme {
     &--primary {
-      background-color: $color-primary;
+      background-color: white;
       padding: 11px 31px;
-      color: white;
+      color: $color-primary-1;
     }
 
     &--bordered-primary {

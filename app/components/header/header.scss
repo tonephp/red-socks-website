@@ -1,10 +1,31 @@
 .header {
   padding-right: 20px;
   padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  //position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(256, 256, 256, 0.1);
+  background-color: $color-primary-1;
 
-  &__cells {
+  &__inner {
     display: flex;
     justify-content: space-between;
-    padding-top: 30px;
+    align-items: center;
+  }
+
+  &__logo {
+
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-wrapper {
+    padding-right: 20px;
   }
 }

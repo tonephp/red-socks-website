@@ -8,7 +8,6 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/default.min.css">
@@ -20,7 +19,7 @@
   
   <div class="layout">
     <div class="layout__header">
-      <?=$this->component('header', ['myVar' => 'header'])?>
+      <?=$this->component('header')?>
     </div>
     <div class="layout__content">
 
