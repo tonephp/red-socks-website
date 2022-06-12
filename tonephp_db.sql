@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: tonephp-mysql-app:3306
--- Generation Time: Jul 24, 2021 at 08:25 PM
--- Server version: 5.7.34
+-- Generation Time: Jun 12, 2022 at 07:08 PM
+-- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -43,8 +43,7 @@ CREATE TABLE `menuitems` (
 INSERT INTO `menuitems` (`id`, `link`, `parent`, `alias`, `position`) VALUES
 (2, '/docs', 0, 'docs', 1),
 (3, '/contacts', 0, 'contacts', 4),
-(4, '/tutorials', 0, 'tutorials', 2),
-(5, '/shop', 0, 'shop', 3);
+(4, '/tutorials', 0, 'tutorials', 2);
 
 -- --------------------------------------------------------
 
@@ -67,8 +66,7 @@ INSERT INTO `menuitems_translate` (`id`, `menuitem_alias`, `lang_alias`, `value`
 (4, 'home', 'en', 'Main'),
 (5, 'contacts', 'en', 'Contacts'),
 (6, 'docs', 'en', 'Docs'),
-(10, 'tutorials', 'en', 'Tutorials'),
-(11, 'shop', 'en', 'Shop');
+(10, 'tutorials', 'en', 'Tutorials');
 
 -- --------------------------------------------------------
 
